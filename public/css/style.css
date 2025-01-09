@@ -45,3 +45,10 @@ button:hover {
     color: red;
     font-size: 14px;
 }
+.dropdown {
+    width: 105%;
+    padding: 8px;
+    margin: 4px 0 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}

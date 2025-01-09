@@ -8,7 +8,12 @@ class Login extends BaseController
 {
     public function index()
     {
-        return view('login');
+        $model = new UserModel();
+        // Fetch distinct user roles from the `user` column
+        $users = $model->select('user')->distinct()->findAll();
+
+        // Pass the user roles to the view
+        return view('login', ['users' => $users]);
     }
 
     public function authenticate()
@@ -17,16 +22,36 @@ class Login extends BaseController
         $session = session();
         $model = new UserModel();
 
+        $userRole = $this->request->getPost('user'); // Get the selected user role
         $username = $this->request->getPost('username');
         $password = $this->request->getPost('password');
 
+        // Check if any field is empty
+        if (empty($userRole)) {
+            $session->setFlashdata('error', 'User is required.');
+            return redirect()->to('/login');
+        }
+
+        if (empty($username)) {
+            $session->setFlashdata('error', 'Username is required.');
+            return redirect()->to('/login');
+        }
+
+        if (empty($password)) {
+            $session->setFlashdata('error', 'Password is required.');
+            // Retain the previously selected role and username
+            return redirect()->to('/login')->withInput();
+        }
+
+        // Find the user based on the username
         $user = $model->where('username', $username)->first();
 
-        if ($user) {
+        if ($user && $user['user'] === $userRole) {
             if ($password === $user['password']) {
                 $session->set([
                     'id' => $user['id'],
                     'username' => $user['username'],
+                    'user' => $user['user'],
                     'logged_in' => true
                 ]);
                 return redirect()->to('/dashboard');
@@ -35,10 +60,11 @@ class Login extends BaseController
                 return redirect()->to('/login');
             }
         } else {
-            $session->setFlashdata('error', 'User not found.');
+            $session->setFlashdata('error', 'Invalid credentials for the selected user.');
             return redirect()->to('/login');
         }
     }
+
 
     public function logout()
     {
