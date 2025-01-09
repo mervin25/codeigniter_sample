@@ -1,0 +1,36 @@
+CRITICAL - 2025-01-09 12:55:33 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "user_management/view.php"
+[Method: GET, Route: user_management/view/1]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('user_management/view.php')
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('user_management/view', [], true)
+ 3 APPPATH\Controllers\UserManagement.php(67): view('user_management/view', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UserManagement->view('1')
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserManagement))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-01-09 12:55:36 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "user_management/view.php"
+[Method: GET, Route: user_management/view/2]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('user_management/view.php')
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('user_management/view', [], true)
+ 3 APPPATH\Controllers\UserManagement.php(67): view('user_management/view', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UserManagement->view('2')
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserManagement))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-01-09 12:55:39 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "user_management/view.php"
+[Method: GET, Route: user_management/view/5]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('user_management/view.php')
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('user_management/view', [], true)
+ 3 APPPATH\Controllers\UserManagement.php(67): view('user_management/view', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UserManagement->view('5')
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserManagement))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))

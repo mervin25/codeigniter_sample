@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="<?= base_url('css/style.css') ?>">
 </head>
 <body>
+    <div class="login-box">
     <div class="login-container">
         <h1>Login</h1>
         <p class="error-message"><?= session()->getFlashdata('error') ?></p>
@@ -27,6 +28,7 @@
             <!-- Submit button -->
             <button type="submit">Login</button>
         </form>
+    </div>
     </div>
     <!-- Link JavaScript -->
     <script src="<?= base_url('js/script.js') ?>"></script>

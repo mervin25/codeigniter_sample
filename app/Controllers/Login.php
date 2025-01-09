@@ -54,7 +54,13 @@ class Login extends BaseController
                     'user' => $user['user'],
                     'logged_in' => true
                 ]);
-                return redirect()->to('/dashboard');
+
+                // Redirect based on user role
+                if ($user['user'] === 'admin') {
+                    return redirect()->to('/dashboard'); // Show all menus including User Management
+                } else {
+                    return redirect()->to('/dashboard'); // Show default dashboard for employees
+                }
             } else {
                 $session->setFlashdata('error', 'Invalid password.');
                 return redirect()->to('/login');
