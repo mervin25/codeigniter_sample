@@ -9,10 +9,10 @@ class Login extends BaseController
     public function index()
     {
         $model = new UserModel();
-        // Fetch distinct user roles from the `user` column
+        
         $users = $model->select('user')->distinct()->findAll();
 
-        // Pass the user roles to the view
+        
         return view('login', ['users' => $users]);
     }
 
@@ -22,11 +22,11 @@ class Login extends BaseController
         $session = session();
         $model = new UserModel();
 
-        $userRole = $this->request->getPost('user'); // Get the selected user role
+        $userRole = $this->request->getPost('user'); 
         $username = $this->request->getPost('username');
         $password = $this->request->getPost('password');
 
-        // Check if any field is empty
+        
         if (empty($userRole)) {
             $session->setFlashdata('error', 'User is required.');
             return redirect()->to('/login');
@@ -39,13 +39,13 @@ class Login extends BaseController
 
         if (empty($password)) {
             $session->setFlashdata('error', 'Password is required.');
-            // Retain the previously selected role and username
+           
             return redirect()->to('/login')->withInput();
         }
 
-        // Find the user based on the username
+    
         $user = $model->where('username', $username)->first();
-
+      
         if ($user && $user['user'] === $userRole) {
             if ($password === $user['password']) {
                 $session->set([
@@ -57,9 +57,9 @@ class Login extends BaseController
 
                 // Redirect based on user role
                 if ($user['user'] === 'admin') {
-                    return redirect()->to('/dashboard'); // Show all menus including User Management
+                    return redirect()->to('/dashboard');
                 } else {
-                    return redirect()->to('/dashboard'); // Show default dashboard for employees
+                    return redirect()->to('/dashboard'); 
                 }
             } else {
                 $session->setFlashdata('error', 'Invalid password.');

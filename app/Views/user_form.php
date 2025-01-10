@@ -8,6 +8,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
+
     <div class="dashboard-container">
         
          <!-- Include Sidebar -->
@@ -25,7 +26,7 @@
                 <input type="password" id="password" name="password" value="<?= isset($user) ? esc($user['password']) : '' ?>" required><br>
 
                 <label for="user">User Type:</label>
-                <select id="user" name="user">
+                <select class="dduser" id="user" name="user">
                     <option value="Admin" <?= isset($user) && $user['user'] === 'admin' ? 'selected' : '' ?>>Admin</option>
                     <option value="Employee" <?= isset($user) && $user['user'] === 'employee' ? 'selected' : '' ?>>Employee</option>
                 </select><br>

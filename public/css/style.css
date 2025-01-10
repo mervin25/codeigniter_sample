@@ -112,7 +112,7 @@ nav a:hover {
     background-color: #ffffff;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    overflow-y: auto; /* Adds scrolling if content overflows */
+    overflow: auto;
 }
 
 .error-message {
@@ -121,3 +121,85 @@ nav a:hover {
 }
 
 
+/* General Styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+}
+
+/* Header Styles */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #2c3e50;
+    color: #333;
+    border-bottom: 1px solid #ddd; /* Light grey border */
+}
+
+/* Logo Styles */
+.logo h1 {
+    margin: 0;
+    font-size: 24px;
+    color: #333;
+}
+
+/* Navigation Links */
+.nav-links {
+    display: flex;
+    gap: 15px; /* Space between links */
+}
+
+.nav-links a {
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.nav-links a:hover {
+    background-color: #f0f0f0;
+}
+
+/* Logout Link */
+.logout-link {
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 15px;
+    border-radius: 5px;
+    background-color: #f2dede;
+    transition: background-color 0.3s;
+}
+
+.logout-link:hover {
+    background-color: #e6b8b8;
+}
+
+.dduser {
+    width: 101%;
+    padding: 8px;
+    margin: 4px 0 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.alert {
+    padding: 15px;
+    margin-bottom: 15px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+.alert-success {
+    margin-top: 10px;
+    color: #3c763d;
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+}

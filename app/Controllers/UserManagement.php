@@ -32,8 +32,12 @@ class UserManagement extends BaseController
             'username', 'password', 'user', 'first_name', 'last_name', 'email', 'phone_number'
         ]);
         $this->userModel->save($data);
+
+        session()->setFlashdata('success', 'User added successfully.');
+
         return redirect()->to('/user_management');
     }
+
 
     public function edit($id)
     {
@@ -47,6 +51,7 @@ class UserManagement extends BaseController
             'username', 'password', 'user', 'first_name', 'last_name', 'email', 'phone_number'
         ]);
         $this->userModel->update($id, $data);
+        session()->setFlashdata('success', 'User updated successfully!');
         return redirect()->to('/user_management');
     }
 
